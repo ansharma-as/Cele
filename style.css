@@ -1,0 +1,149 @@
+
+@keyframes rotateIn {
+    0% {
+      transform: rotate(10deg);
+    }
+    100% {
+      transform: rotate(0deg); /* Stopping at no additional rotation */
+    }
+  }
+
+    .animate-rotate-in {
+      animation: rotateIn 2s ease-out;
+    }
+
+
+    @keyframes spread {
+        0% {
+          transform: translate(0, 0);
+          opacity: 1;
+        }
+        100% {
+          transform: translate(var(--spread-x, 0), 0);
+          opacity: 1;
+        }
+      }
+      
+      .animate-spread {
+        animation: spread 1s ease-out forwards;
+      }
+
+      
+  
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+          opacity: 1;
+        }
+        50% {
+          opacity: 1;
+        80% {
+            transform: rotate(300deg);
+            opacity: 1;
+        }
+        }
+        100% {
+          transform: rotate(360deg);
+          opacity: 0;
+        }
+      }
+
+    
+      /* Apply animation and stop after 3 seconds */
+      .animate-spin-stop {
+        animation: spin 3s ease-out forwards;
+      }
+
+      .animate-spin-stop:hover {
+        opacity: 1;
+      }
+
+      .typewriter {
+        font-size: 80px;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 600;
+        color: #4E9459;
+        white-space: nowrap;
+        overflow: hidden;
+        display: inline-block;
+        border-right: 2px solid #4E9459; /* Cursor effect */
+        animation: blink 0.7s step-end infinite;
+      }
+      @keyframes blink {
+        50% {
+          border-color: transparent;
+        }
+      }
+      #typewriter {
+        font-family: 'Montserrat', monospace;
+        font-size: 80px;
+        tracking: wide;
+        border-right: 2px solid black;
+        width: fit-content;
+        white-space: nowrap;
+        overflow: hidden;
+        z-index: 10;
+        display:absolute;
+    }
+    
+    .highlight {
+        color: #4E9459;
+        font-weight: bold;
+        /* Remove any caret (typewriter effect) */
+        caret-color: none; /* Prevent blinking cursor */
+        text-decoration: none; /* Remove underline or blinking text effects */
+    }
+
+
+    .text-fade {
+        opacity: 0;
+        transition: opacity 2s ease-in-out;
+    }
+    
+
+
+
+    .scroll-container {
+        display: flex;
+        width: max-content;
+        animation: scrollAnimation 20s linear infinite;
+    }
+    .scroll-container2 {
+        display: flex;
+        width: max-content;
+        animation: scrollAnimation2 20s linear infinite;
+    }
+
+    .wrapper:hover .scroll-container {
+        animation-play-state: paused;
+    }
+    .wrapper:hover .scroll-container2 {
+        animation-play-state: paused;
+    }
+
+    @keyframes scrollAnimation {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(calc(-50% - 16px)); }
+    }
+    @keyframes scrollAnimation2 {
+        0% { 
+            transform: translateX(calc(-50%)); 
+        }
+        100% { 
+            transform: translateX(0); 
+        }
+    }
+    .card:hover {
+        transform: scale(1.02);
+    }
+
+
+    #svg-container {
+        position: relative;
+        overflow: hidden;
+    }
+    
+    #demo {
+        transition: transform 0.1s ease-out;
+        transform-origin: center center;
+    }
