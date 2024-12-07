@@ -182,3 +182,49 @@ document.addEventListener('DOMContentLoaded', () => {
       }
   });
 });
+
+
+
+
+
+
+
+
+
+
+
+
+document.addEventListener("scroll", () => {
+  const scrollPosition = window.scrollY;
+  const maxShift = 50; // Maximum allowed shift in pixels
+
+  // Constrain the translateX values
+  document.getElementById("image3").style.transform = `translateX(${Math.min(scrollPosition * 0.4, maxShift)}px)`;
+  document.getElementById("image2").style.transform = `translateX(${Math.min(scrollPosition*0.7 * -0.45, maxShift)}px)`;
+  document.getElementById("image1").style.transform = `translateX(${Math.min(scrollPosition*1.5 * -0.4, maxShift)}px)`;
+});
+
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const slideUpElements = document.querySelectorAll('.slideUp-target');
+
+  const observer = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // Add the animation class when the element comes into view
+          entry.target.classList.add('animate-slideUp');
+          observer.unobserve(entry.target); // Stop observing after animation is triggered
+        }
+      });
+    },
+    { threshold: 0.1 } // Trigger when 10% of the element is visible
+  );
+
+  slideUpElements.forEach((el) => observer.observe(el)); // Observe all target elements
+});
