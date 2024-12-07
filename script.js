@@ -116,7 +116,7 @@ function resetFAQ(element) {
 
 let j = 0;
 let text = ["Premium", "Beautiful"];
-let toggleSpeed = 2000; 
+let toggleSpeed = 2500; 
 
 function toggleWords() {
     document.getElementById("typewriter").innerHTML = text[j];

@@ -49,19 +49,21 @@
     white-space: nowrap;
     overflow: hidden;
     display: inline-block;
-    border-right: 2px solid #4E9459; 
-    animation: blink 0.7s step-end infinite;
+    border-right: none; 
+    animation: hidden;
   }
+
   @keyframes blink {
     50% {
-      border-color: transparent;
+      border-color: hidden;
     }
   }
+  
   #typewriter {
       font-family: 'Poppins', sans-serif;
-      font-size: 20px;
+      font-size: 70px;
       text-align: center;
-      margin: 20px;
+      margin: 0px;
     }
 
 .highlight {
