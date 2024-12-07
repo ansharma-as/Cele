@@ -49,7 +49,7 @@
     white-space: nowrap;
     overflow: hidden;
     display: inline-block;
-    border-right: 2px solid #4E9459; /* Cursor effect */
+    border-right: 2px solid #4E9459; 
     animation: blink 0.7s step-end infinite;
   }
   @keyframes blink {
@@ -58,28 +58,23 @@
     }
   }
   #typewriter {
-    font-family: 'Montserrat', monospace;
-    font-size: 80px;
-    tracking: wide;
-    border-right: 2px solid black;
-    width: fit-content;
-    white-space: nowrap;
-    overflow: hidden;
-    z-index: 10;
-    display:absolute;
-}
+      font-family: 'Poppins', sans-serif;
+      font-size: 20px;
+      text-align: center;
+      margin: 20px;
+    }
 
 .highlight {
     color: #4E9459;
     font-weight: bold;
-    caret-color: none; /* Prevent blinking cursor */
+    caret-color: none; 
     text-decoration: none; 
 }
 
 
 .text-fade {
     opacity: 0;
-    transition: opacity 2s ease-in-out;
+    transition: opacity 3s ease-in-out;
 }
 
 
@@ -145,7 +140,7 @@ html {
 /* Initial hidden state */
 .hidden {
   opacity: 0;
-  transform: translateY(100%); /* Start from below */
+  transform: translateY(100%); 
 }
 
 /* Slide-up animation */
@@ -160,12 +155,11 @@ html {
   }
 }
 
-/* Apply the animation when the element comes into view */
 .slideUp-target {
-  animation: slideUp 0.8s ease-out forwards; /* Slide-up animation */
-  animation-play-state: paused; /* Initially paused */
+  animation: slideUp 0.8s ease-out forwards; 
+  animation-play-state: paused;
 }
 
 .animate-slideUp {
-  animation-play-state: running; /* Start the animation */
+  animation-play-state: running;
 }

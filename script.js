@@ -111,9 +111,12 @@ function resetFAQ(element) {
 
 // window.onload = typeWriter;
 
+
+
+
 let j = 0;
 let text = ["Premium", "Beautiful"];
-let toggleSpeed = 3000; 
+let toggleSpeed = 2000; 
 
 function toggleWords() {
     document.getElementById("typewriter").innerHTML = text[j];
@@ -121,7 +124,7 @@ function toggleWords() {
 }
 
 window.onload = function() {
-    toggleWords(); // Show the first word immediately
+    toggleWords(); // Showing the first word immediately
     setInterval(toggleWords, toggleSpeed); 
 };
 
@@ -146,22 +149,12 @@ window.addEventListener('scroll', fadeInOnScroll);
 window.addEventListener('load', fadeInOnScroll);
 
 
-
-
-
-
-
 function scrollToTop() {
   window.scrollTo({
     top: 0,
     behavior: 'smooth'
   });
 }
-
-
-
-
-
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -184,29 +177,14 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-
-
-
-
-
-
-
-
-
-
 document.addEventListener("scroll", () => {
   const scrollPosition = window.scrollY;
-  const maxShift = 50; // Maximum allowed shift in pixels
+  const maxShift = 50; 
 
-  // Constrain the translateX values
   document.getElementById("image3").style.transform = `translateX(${Math.min(scrollPosition * 0.4, maxShift)}px)`;
   document.getElementById("image2").style.transform = `translateX(${Math.min(scrollPosition*0.7 * -0.45, maxShift)}px)`;
   document.getElementById("image1").style.transform = `translateX(${Math.min(scrollPosition*1.5 * -0.4, maxShift)}px)`;
 });
-
-
-
-
 
 
 
@@ -217,14 +195,13 @@ document.addEventListener("DOMContentLoaded", () => {
     (entries, observer) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          // Add the animation class when the element comes into view
           entry.target.classList.add('animate-slideUp');
-          observer.unobserve(entry.target); // Stop observing after animation is triggered
+          observer.unobserve(entry.target); 
         }
       });
     },
     { threshold: 0.1 } // Trigger when 10% of the element is visible
   );
 
-  slideUpElements.forEach((el) => observer.observe(el)); // Observe all target elements
+  slideUpElements.forEach((el) => observer.observe(el)); 
 });
